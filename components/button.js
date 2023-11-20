@@ -1,6 +1,7 @@
 import React from "react";
 import { TouchableOpacity, Text, StyleSheet } from "react-native";
 
+// Komponen Button untuk tombol
 const Button = (props) => {
   return (
       <TouchableOpacity style={styles.container} onPress={props.onPress}>

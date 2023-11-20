@@ -13,9 +13,16 @@ import Button from "../components/button";
 const windowWidth = Dimensions.get("window").width;
 
 const NewsDetail = ({ route }) => {
+  // Mengambil parameter yang telah di passing dari halaman News
+  // dengan cara route.params
   const data = route.params.data;
+  // Merender data dari berita.
   return (
       <View style={styles.container}>
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <Text>Irvan Surya Nugraha</Text>
+          <Text>1203210007</Text>
+        </View>
         <Image source={{ uri: data.thumbnail }} style={styles.image} />
         <Separator height={10} />
         <View style={{ padding: 10 }}>
@@ -24,6 +31,7 @@ const NewsDetail = ({ route }) => {
           <Text style={styles.text}>{data.description}</Text>
           <Separator height={20} />
         </View>
+        {/*Jika ditekan tombolnya maka akan di alihkan ke browser*/}
         <Button
             text="read more"
             onPress={() =>

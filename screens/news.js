@@ -10,18 +10,24 @@ import {
   Image,
 } from "react-native";
 
+// Mendapatkan width dari screen
 const windowWidth = Dimensions.get("window").width;
 
+// Membuat screen News yang mengextend dari PureComponent
+// Disini menerapkan usecase aplikasi news
 class News extends PureComponent {
+  // Menginisialisasi constructor
   constructor(props) {
     super(props);
 
+    // Menginisialisasi state yang nanti akan digunakan
     this.state = {
       data: [],
       isLoading: true,
     };
   }
 
+  // Fungsi untuk mendapatkan data dari API
   async getNews() {
     try {
       const response = await fetch(
@@ -36,6 +42,7 @@ class News extends PureComponent {
     }
   }
 
+  // Ketika di lifecycle componentDidMount maka panggil fungsi getNews
   componentDidMount() {
     this.getNews();
   }
@@ -60,10 +67,15 @@ class News extends PureComponent {
   };
 
   render() {
+    // destructuring state agar mudah dipakai
     const { data, isLoading } = this.state;
 
     return (
         <View style={styles.container}>
+          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Text>Irvan Surya Nugraha</Text>
+            <Text>1203210007</Text>
+          </View>
           {isLoading ? (
               <ActivityIndicator size="large" color="#AA0002" />
           ) : (
@@ -103,4 +115,4 @@ const styles = StyleSheet.create({
     marginLeft: 15,
   },
 });
-  
+

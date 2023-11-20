@@ -8,16 +8,20 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+// Membuat screen dengan class component
 class ClassComponent extends Component {
+  // Menginisialisasi constructor pada class
   constructor(props) {
     super(props);
 
+    // Menginisialisasi state
     this.state = {
       data: [],
       isLoading: true,
     };
   }
 
+  // Menginisialisasi fungsi untuk memanggil API
   async getMovies() {
     try {
       const response = await fetch("https://reactnative.dev/movies.json");
@@ -30,10 +34,12 @@ class ClassComponent extends Component {
     }
   }
 
+  // componenDidMount sama dengan useEffect ketika di functional component
   componentDidMount() {
     this.getMovies();
   }
 
+  // fungsi untuk merender data movie
   renderItem = ({ item }) => {
     return (
         <TouchableOpacity style={styles.item}>
@@ -44,11 +50,17 @@ class ClassComponent extends Component {
     );
   };
 
+  // menggunakan fungsi render untuk merender component
   render() {
+    // destructuring state dari component
     const { data, isLoading } = this.state;
 
     return (
         <View style={styles.container}>
+          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Text>Irvan Surya Nugraha</Text>
+            <Text>1203210007</Text>
+          </View>
           {isLoading ? (
               <ActivityIndicator size="large" color="#AA0002" />
           ) : (

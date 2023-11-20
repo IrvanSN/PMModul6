@@ -8,6 +8,7 @@ import ClassComponent from "./screens/class_component";
 import News from "./screens/news";
 import NewsDetail from "./screens/news_detail";
 
+// Menginisialisasi Stack Navigator untuk membuat stack screen
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -20,9 +21,14 @@ const App = () => {
   };
 
   return (
+      // Menginisialisasi NavigationContainer untuk membungkus StackNavigator
       <NavigationContainer>
+        {/*Memberi warna merah untuk background dari StatusBar*/}
         <StatusBar style="auto" backgroundColor="#AA0002" />
+        {/*Menginisialisasi Navigator untuk membungkus Screen*/}
         <Stack.Navigator>
+          {/*Stack Screen Home dengan component Home*/}
+          {/*Options disini untuk mengkonfigurasi header (title, dan headerStyle*/}
           <Stack.Screen
               name="Home"
               component={Home}
@@ -31,7 +37,8 @@ const App = () => {
                 ...headerStyle,
               }}
           />
-
+          {/*Stack Screen FunctionalComponent dengan component Home*/}
+          {/*Options disini untuk mengkonfigurasi header (title, dan headerStyle*/}
           <Stack.Screen
               name="FunctionalComponent"
               component={FunctionalComponent}
@@ -40,7 +47,8 @@ const App = () => {
                 ...headerStyle,
               }}
           />
-
+          {/*Stack Screen ClassComponent dengan component Home*/}
+          {/*Options disini untuk mengkonfigurasi header (title, dan headerStyle*/}
           <Stack.Screen
               name="ClassComponent"
               component={ClassComponent}
@@ -49,7 +57,8 @@ const App = () => {
                 ...headerStyle,
               }}
           />
-
+          {/*Stack Screen News dengan component Home*/}
+          {/*Options disini untuk mengkonfigurasi header (title, dan headerStyle*/}
           <Stack.Screen
               name="News"
               component={News}
@@ -58,7 +67,8 @@ const App = () => {
                 ...headerStyle,
               }}
           />
-
+          {/*Stack Screen NewsDetail dengan component Home*/}
+          {/*Options disini untuk mengkonfigurasi header (title, dan headerStyle*/}
           <Stack.Screen
               name="NewsDetail"
               component={NewsDetail}

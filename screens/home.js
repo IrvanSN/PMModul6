@@ -11,7 +11,13 @@ import Separator from "../components/separator";
 
 const Home = ({ navigation }) => {
   return (
+      // Menggunakan komponen ScrollView agar screen bisa di scroll
+      // Setiap tombol/komponen TouchableOpacity jika di tekan akan menavigasikan ke halaman yang sudah ditentukan
       <ScrollView style={styles.container}>
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <Text>Irvan Surya Nugraha</Text>
+          <Text>1203210007</Text>
+        </View>
         <Image source={require("../assets/logo.png")} style={styles.logo} />
 
         <Separator height={15} />
